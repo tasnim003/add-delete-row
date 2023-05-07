@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>add-delete-row</title>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to add a new row at the first position of the table and then add cells and content.</p>
+
+<table id="myTable">
+  <tr>
+    <td>Row1 cell1</td>
+    <td>Row1 cell2</td>
+  </tr>
+  <tr>
+    <td>Row2 cell1</td>
+    <td>Row2 cell2</td>
+  </tr>
+  <tr>
+    <td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+  </tr>
+</table>
+<br>
+
+<button type="button" onclick="addFunction()">Add</button>
+<button type="button" onclick="delFunction()">Delete</button>
+<script>
+function addFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(3);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "<input type='text'>";
+  cell2.innerHTML = "<input type='text'>";
+}
+function delFunction() {
+  document.getElementById("myTable").deleteRow(3);
+}
+</script>
+
+</body>
+</html>
